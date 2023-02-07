@@ -37,6 +37,7 @@
         评论资源路径在 `msgData\data\comments\$msg_id\***.jpg`
 
         > $msg_id 可以头像右键快速复制
+
         > ![modify](./assets/modify-comment-6.png)
 
         点击右上角 x 旁边图标可快速打开相应评论的资源文件夹
