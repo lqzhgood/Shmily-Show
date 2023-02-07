@@ -8,9 +8,24 @@
 
 ## 文件结构
 
-```
-- Show
-    - memoryweb
-    - server
-    - msgData
-```
+-   Show
+    -   memoryweb 前端, 用来展示 `数据文件`
+    -   server 后端, 主要用来实现对 `数据` 和 `评论` 的增删改查
+    -   msgData
+        -   data 用来存放 `资源文件`
+        -   tools
+            -   webServer 资源文件 web 服务器
+
+## 使用
+
+-   安装 node 环境 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs.html]
+-   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
+-   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
+
+    > 我想要对数据文件增删改查并添加评论
+
+        - 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
+
+-   进入 `memoryweb` 执行 `npm run build`
+-   将 `msgData` 复制到 `memoryweb/dist`
+-   `memoryweb/dist` 就是最终文件, 双击 `start.bat` 可以直接运行

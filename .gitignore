@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+memoryweb/src/assets/data
+memoryweb/src/assets/data_pre
+memoryweb/public/json
+msgData/data
