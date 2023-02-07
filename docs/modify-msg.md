@@ -4,17 +4,17 @@
 
 鼠标移动到消息上后左下角会有 **编辑** 按钮, 如图
 
-![modify](./assets/msg-modify-1.png)
+![modify](./assets/modify-msg-1.png)
 
 进行(多条) **删改** 后可点击左上角红色按钮确定修改. 或点击绿色按钮 F12 中查看
 
-![modify](./assets/msg-modify-2.png)
+![modify](./assets/modify-msg-2.png)
 
 ### 开始修改
 
 修改窗口分为 `功能区`, `快捷操作`, `Msg 源码`
 
-![modify](./assets/msg-modify-3.png)
+![modify](./assets/modify-msg-3.png)
 
 -   功能区
 
