@@ -20,6 +20,9 @@
 
 -   安装 node 环境 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs.html]
 -   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
+
+    > 支持多个文件, 不要修改文件名, 文件名会作为 ID 的一部分,
+
 -   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
 -   修改 `memoryweb\src\config.js`
 
