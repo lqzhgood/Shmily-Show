@@ -69,7 +69,7 @@
 -   memoryweb
 
     -   public
-        -   json 预处理的 json 文件, 每次执行会自动生成, ajax 方式获取
+        -   json 预处理的 json 文件, 每次执行会自动生成. 通过 ajax 方式获取
         -   static 静态文件, 包含图标等
         -   tools
             -   Chrome 打包的便携版 Chrome
@@ -123,4 +123,20 @@
 
 ### msgData
 
+#### 目录说明
+
+-   msgData
+    -   data 资源文件夹
+    -   tools 最终会和 `memoryweb\public\tools` 中一起合并到 `\dist`
+        -   webServer
+            > 开发时不使用 webpack 的 webServer 承载静态资源, 采用生产环境一致的 web 服务器可以在 debug 时更容易发现错误. 例如 head 方法很多 web 服务器支持并不完善
+
 ### server
+
+这里面很多都随手写的, 代码很乱. 但现有功能都已经测试验证. 有新需求自行增加 Api 吧
+
+#### 目录说明
+
+-   server
+    -   routes
+        > Api 路由
