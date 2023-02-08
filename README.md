@@ -15,6 +15,7 @@
         -   data 用来存放 `资源文件`
         -   tools
             -   webServer 资源文件 web 服务器
+            -   Chrome 便携版 Chrome , 需要解压
 
 ## 使用
 
