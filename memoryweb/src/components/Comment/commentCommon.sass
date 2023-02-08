@@ -1,0 +1,69 @@
+@mixin commentContent
+    background: #fff
+    padding: 10px 4px
+    border-left: 1px solid #E1E4E8
+    border-right: 1px solid #E1E4E8
+    flex: 1 1 auto
+    text-align: justify
+    word-break: break-all
+    ::v-deep
+        @include commentHTML
+
+@mixin commentHTML
+    *
+        margin: 0
+        padding: 0
+        line-height: 1.5em
+    p
+        text-indent: 2em
+        margin-bottom: 5px
+        &:last-child
+            margin-bottom: 0
+    hr
+        margin: 10px 0
+    img, video
+        max-width: 100%
+    b,i,a
+        margin: 0 5px
+    @include commentPage
+    @include commentLink
+    @include commentSearch
+    @include commentOtherLink
+    tag
+        padding: 2px 6px
+        border-radius: 4px
+        margin: 0 5px
+        font-size: 12px
+        display: inline-block
+        background-color: #ecf5ff
+        color: #409eff
+        border: 1px solid #d9ecff
+    .align-center
+        text-align: center
+    // 引用内容格式
+    .reference
+        font-size: 12px
+        text-indent: 0
+
+@mixin commentPage
+    a[innerstatistic]::before
+        content: '📈'
+        @include specialLink
+@mixin commentLink
+    a[innerlink]::before
+        content: '🚀'
+        @include specialLink
+@mixin commentSearch
+    a[innersearch]::before
+        content: '🔎'
+        @include specialLink
+@mixin commentOtherLink
+    a:not([innerstatistic]):not([innerlink]):not([innersearch])::before
+        content: '🔗'
+        @include specialLink
+
+@mixin specialLink
+    text-decoration: none
+    display: inline-block // 这个才能让 text-decoration 生效
+    text-indent: 0 // inline-block 会让元素变为 p， 这里去掉副作用
+    padding-right: 2px

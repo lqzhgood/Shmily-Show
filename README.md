@@ -25,10 +25,19 @@
 
 -   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
 -   修改 `memoryweb\src\config.js`
+-   修改 `memoryweb\script\user\`
+
+        - banDict.js 词云中不需要的词可以在这里过滤
+        - commentTag.js 需要在统计页中出现次数的关键词
+        - userDict.txt 用户词典 参考 https://github.com/yanyiwu/nodejieba
+        - userGroup.js 可以对 sender / receiver 分组
 
     > [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
 
 -   进入 `memoryweb` 执行 `npm run build`
+-   解压缩 `msgData\tools\Chrome.zip`
+    -   确保解压后路径 `msgData\tools\Chrome\MyChrome.exe` 正确
+    -   删除 `Chrome.z*` 压缩包
 -   将 `msgData` 复制到 `memoryweb/dist`
 -   `memoryweb/dist` 就是最终文件, 双击 `start.bat` 可以直接运行
 

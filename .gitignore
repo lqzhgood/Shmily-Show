@@ -104,7 +104,9 @@ dist
 .tern-port
 
 
-memoryweb/src/assets/data
-memoryweb/src/assets/data_pre
-memoryweb/public/json
-msgData/data
+memoryweb/src/assets/data/
+memoryweb/src/assets/data_pre/
+memoryweb/public/json/
+msgData/data/
+msgData/tools/Chrome/
+memoryweb/public/CNAME

@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Source Han Sans SC ExtraLight'), local('./font/SourceHanSansSC-ExtraLight');
+}
+
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Source Han Sans SC Light'), local('./font/SourceHanSansSC-Light');
+}
+
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Source Han Sans SC Normal'), local('./font/SourceHanSansSC-Normal');
+}
+
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Source Han Sans SC Regular'), local('./font/SourceHanSansSC-Regular');
+}
+
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Source Han Sans SC Medium'), local('./font/SourceHanSansSC-Medium');
+}
+
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Source Han Sans SC Bold'), local('./font/SourceHanSansSC-Bold');
+}
+
+@font-face {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Source Han Sans SC Heavy'), local('./font/SourceHanSansSC-Heavy');
+}

@@ -1,0 +1,26 @@
+@mixin Table
+    .icon
+        max-height: 14px
+        margin-right: 5px
+    .btn
+        cursor: pointer
+    .btn:hover
+        color: #409eff
+    .innerForm
+        font-size: 0
+        margin-top: -5px
+        margin-bottom: 10px
+        ::v-deep
+            label
+                color: #99a9bf !important
+                font-weight: bold
+            .el-form-item
+                margin-right: 0
+                margin-bottom: 0
+                .el-form-item__label,.el-form-item__content
+                    font-size: 12px
+                    line-height: 22px
+    .contentWrap
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap

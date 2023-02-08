@@ -1,0 +1,137 @@
+@import '~@/styles/vars.module.sass'
+
+@mixin one-columns-grid
+    grid-template-columns: minmax(100px, auto) minmax(30px,1fr) 1fr 32px 1fr 32px
+
+@mixin two-columns-grid
+    grid-template-columns: minmax(calc( 100px + 50% + 10px ), auto) minmax(30px,1fr) 1fr 32px 1fr 32px // 50% 左边距 10px是一半的 grid-column-gap: 20px
+
+@mixin no-direction-columns-grid
+    grid-template-columns: minmax(100px, auto) minmax(30px,1fr)
+
+@mixin value-count
+    padding-right: 5px
+    color: #99a9bf
+
+@mixin g2-tooltip
+    ::v-deep
+        .g2-tooltip
+            padding-bottom: 10px !important
+            font-family: 'Source Code Variable' !important
+            .wrap
+                .title
+                    display: flex
+                    margin: 12px 0 6px
+                    display: grid
+                    grid-column-gap: 5px
+                    @include one-columns-grid
+                    .year
+                        flex: 0 0 50%
+                    .total
+                        text-align: right
+                        @include value-count
+                    .avatar
+                        grid-column-start: span 2
+                        text-align: right
+                        margin-right: 23px
+                        img
+                            height: 12px
+                            vertical-align: bottom
+                .list
+                    display: grid
+                    grid-template-columns: 1fr
+                    grid-row-gap: 5px
+                    grid-column-gap: 20px
+                    .list-item
+                        &.全部
+                            grid-column-start: span 1
+                            hr
+                                margin: 2px 0
+                        .row
+                            display: grid
+                            grid-column-gap: 5px
+                            grid-template: 'label count come comeP go goP'
+                            @include one-columns-grid
+                            &:last-child
+                                margin-bottom: 0 !important
+                            &.source
+                                margin-bottom: 2px
+                            &.type
+                                margin-bottom: 1px
+                                .label
+                                    padding-left: 10px
+                            .label
+                                grid-area: label
+                                display: flex
+                                align-items: center
+                                .marker
+                                    display: inline-block
+                                    width: 8px
+                                    height: 8px
+                                    border-radius: 50%
+                                    margin-right: 5px
+                                .icon
+                                    max-width: 10px
+                                    margin-right: 5px
+                            .count
+                                grid-area: count
+                                @include value-count
+                            .come
+                                grid-area: come
+                            .comeP
+                                grid-area: comeP
+                            .go
+                                grid-area: go
+                            .goP
+                                grid-area: goP
+                            .come,.comeP
+                                color: $color_direction_come
+                            .go,.goP
+                                color: $color_direction_go
+                            .count,.come,.go,.comeP,.goP
+                                text-align: right
+                                font-weight: 600
+                                white-space: nowrap
+                                .p
+                                    display: inline-block
+                                    font-size: 8px
+                                    transform: scale(0.8)
+                                    transform-origin: right bottom
+            .wrap.two-columns
+                .title
+                    @include two-columns-grid
+                .list
+                    grid-template-columns: 1fr 1fr
+                    .list-item
+                        &.全部
+                            grid-column-start: span 2
+                            .source
+                                @include two-columns-grid
+                        // 因为每个 type 数量不一致导致高度不一致,
+                        // 手动排序让空间占用更合理
+                        &.CallLog
+                            grid-area: 2
+                        &.Email
+                            grid-area: 5
+                        &.MobileQQ
+                            grid-area: 3
+                        // &.QQ
+                        //     grid-area: 6
+                        &.SMS
+                            grid-area: 4
+                        // &.Camera
+                        //     grid-area: 5
+                        // &.Wechat
+                        //     grid-area: 4
+            .wrap.hiddenDirection
+                .title
+                    @include no-direction-columns-grid
+                    .avatar
+                        display: none
+                .list
+                    .list-item
+                        .row
+                            grid-template: 'label count'
+                            @include no-direction-columns-grid
+                        .go,.goP,.come,.comeP
+                            display: none

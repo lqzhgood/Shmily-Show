@@ -1,0 +1,36 @@
+@mixin avatar
+    max-width: 15px
+    vertical-align: middle
+    margin-right: 5px
+    object-fit: scale-down
+
+@mixin title
+    text-align: center
+    min-width: 100px
+    &:empty
+        display: none
+    ::v-deep
+        .row
+            display: flex
+            .value
+                flex: 1 1 auto
+                text-align: right
+
+@mixin hr
+    margin-top: 5px
+    &:last-child,&:first-child
+        display: none
+
+@mixin content
+    .row
+        display: flex
+        .img
+            @include avatar
+        .value
+            flex: 1 0 auto
+            text-align: right
+            .divider
+                padding: 0 2px
+            .percent
+                width: 40px
+                display: inline-block
