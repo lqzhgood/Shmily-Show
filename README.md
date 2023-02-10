@@ -6,17 +6,6 @@
 
 > Demo https://github.com/lqzhgood/Shmily-Show-Demo
 
-## 文件结构
-
--   Show
-    -   memoryweb 前端, 用来展示 `数据文件`
-    -   server 后端, 主要用来实现对 `数据` 和 `评论` 的增删改查
-    -   msgData
-        -   data 用来存放 `资源文件`
-        -   tools
-            -   webServer 资源文件 web 服务器
-            -   Chrome 便携版 Chrome , 需要解压
-
 ## 使用
 
 -   安装 node 环境 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs.html]
@@ -41,6 +30,17 @@
     -   删除 `Chrome.z*` 压缩包
 -   将 `msgData` 复制到 `memoryweb/dist`
 -   `memoryweb/dist` 就是最终文件, 双击 `start.bat` 可以直接运行
+
+## 文件结构
+
+-   Show
+    -   memoryweb 前端, 用来展示 `数据文件`
+    -   server 后端, 主要用来实现对 `数据` 和 `评论` 的增删改查
+    -   msgData
+        -   data 用来存放 `资源文件`
+        -   tools
+            -   webServer 资源文件 web 服务器
+            -   Chrome 便携版 Chrome , 需要解压
 
 ## Wiki
 
