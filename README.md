@@ -42,9 +42,9 @@
 -   将 `msgData` 复制到 `memoryweb/dist`
 -   `memoryweb/dist` 就是最终文件, 双击 `start.bat` 可以直接运行
 
-## 开发
+## Wiki
 
-参考 [./docs/dev.md](./docs/dev.md)
+参考 [./docs/wiki.md](./docs/wiki.md)
 
 ## 感谢
 
