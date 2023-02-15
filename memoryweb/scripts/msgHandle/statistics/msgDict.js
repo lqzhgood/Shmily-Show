@@ -99,8 +99,8 @@ const dict = msgJson.reduce(
             }
         }
 
-        if (source === 'CallLog' && cV.$CallLog.duration > pre.$CallLog.duration[1]) {
-            pre.$CallLog.duration[1] = cV.$CallLog.duration;
+        if (source === 'CallLog' && cV.$CallLog.data.duration > pre.$CallLog.data.duration[1]) {
+            pre.$CallLog.data.duration[1] = cV.$CallLog.data.duration;
         }
 
         return pre;
@@ -121,7 +121,7 @@ const dict = msgJson.reduce(
         direction: [],
         send: GROUP_SEND.concat(SEND_OTHER),
         receive: GROUP_RECEIVE.concat(RECEIVE_OTHER),
-        $CallLog: { duration: [0, 0] },
+        $CallLog: { data: { duration: [0, 0] } },
     },
 );
 

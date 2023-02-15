@@ -1,40 +1,40 @@
 <template>
-	<MsgWrap class="source-MobileQQ s60v3">
-		<div :class="{ hasFile: fileParse }">
-			<div v-html="msg.html"></div>
+    <MsgWrap class="source-MobileQQ s60v3">
+        <div :class="{ hasFile: fileParse }">
+            <div v-html="msg.html"></div>
 
-			<File :fileParse="fileParse" :msg="msg" :url="url" v-if="fileParse" />
-		</div>
-	</MsgWrap>
+            <File :fileParse="fileParse" :msg="msg" :url="url" v-if="fileParse" />
+        </div>
+    </MsgWrap>
 </template>
 <script>
 import { fileExist } from '@/utils/net';
 
 export default {
-	name: 'Source-MobileQQ-s60v3',
-	async mounted() {
-		if (this.fileParse) {
-			const exist = await fileExist(this.fileParse.url);
-			this.isNotExist = !exist;
-		}
-	},
-	props: {
-		msg: Object,
-	},
-	data: () => ({
-		isNotExist: false,
-	}),
-	computed: {
-		fileParse() {
-			return this.msg.$MobileQQ.fileParse;
-		},
-		url() {
-			return this.fileParse.url;
-		},
-	},
-	components: {
-		File: () => import('../../../../components/Type/File-Simple/index.vue'),
-	},
+    name: 'Source-MobileQQ-s60v3',
+    async mounted() {
+        if (this.fileParse) {
+            const exist = await fileExist(this.fileParse.url);
+            this.isNotExist = !exist;
+        }
+    },
+    props: {
+        msg: Object,
+    },
+    data: () => ({
+        isNotExist: false,
+    }),
+    computed: {
+        fileParse() {
+            return this.msg.$MobileQQ.data?.fileParse;
+        },
+        url() {
+            return this.fileParse.url;
+        },
+    },
+    components: {
+        File: () => import('../../../../components/Type/File-Simple/index.vue'),
+    },
 };
 </script>
 <style lang="sass" scoped>

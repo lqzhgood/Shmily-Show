@@ -1,39 +1,39 @@
 <template>
-	<MsgWrap noPadding>
-		<div class="wechat-sport" target="_blank">
-			<h4>{{title}}</h4>
-			<div class="description">
-				<span class="text">{{des}}</span>
-				<img class="icon right sport" data-is-icon src="/static/msg/source/Wechat/img/sport.png" />
-				<br />
-			</div>
-			<div class="bottom">{{cardText}}</div>
-		</div>
-	</MsgWrap>
+    <MsgWrap noPadding>
+        <div class="wechat-sport" target="_blank">
+            <h4>{{ title }}</h4>
+            <div class="description">
+                <span class="text">{{ des }}</span>
+                <img class="icon right sport" data-is-icon src="/static/msg/source/Wechat/img/sport.png" />
+                <br />
+            </div>
+            <div class="bottom">{{ cardText }}</div>
+        </div>
+    </MsgWrap>
 </template>
 <script>
 import _ from 'lodash';
 
 export default {
-	name: 'Msg-Wechat-sport',
-	props: {
-		msg: Object,
-	},
-	data: () => ({}),
-	computed: {
-		item() {
-			return this.msg.$Wechat.webData;
-		},
-		title() {
-			return _.get(this.item, 'content.msg.appmsg.title');
-		},
-		des() {
-			return _.get(this.item, 'content.msg.appmsg.des');
-		},
-		cardText() {
-			return _.get(this.item, 'content.msg.appinfo.appname');
-		},
-	},
+    name: 'Msg-Wechat-sport',
+    props: {
+        msg: Object,
+    },
+    data: () => ({}),
+    computed: {
+        data() {
+            return this.msg.$Wechat.data;
+        },
+        title() {
+            return _.get(this.data, 'appmsg.title');
+        },
+        des() {
+            return _.get(this.data, 'appmsg.des');
+        },
+        cardText() {
+            return _.get(this.data, 'appinfo.appname');
+        },
+    },
 };
 </script>
 <style lang="sass" scoped>

@@ -1,25 +1,17 @@
 <template>
-	<MsgWrap>
-		<div class="wechat-withdraw">
-			<div class="message-tip" v-html="html"></div>
-		</div>
-	</MsgWrap>
+    <MsgWrap>
+        <div class="wechat-withdraw">
+            <div class="message-tip" v-html="msg.html"></div>
+        </div>
+    </MsgWrap>
 </template>
 <script>
 export default {
-	name: 'Msg-Wechat-withdraw',
-	props: {
-		msg: Object,
-	},
-	data: () => ({}),
-	computed: {
-		item() {
-			return this.msg.$Wechat.webData;
-		},
-		html() {
-			return this.item.content;
-		},
-	},
+    name: 'Msg-Wechat-withdraw',
+    props: {
+        msg: Object,
+    },
+    data: () => ({}),
 };
 </script>
 <style lang="sass" scoped>

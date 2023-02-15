@@ -16,7 +16,7 @@ export default _this => [
             if (errInput) return null;
 
             const imgUrl = './data/wechat-manual/image2/' + fileName.trim();
-            msg.$Wechat.webData.$imgUrl.unshift(imgUrl);
+            msg.$Wechat.data.$imgUrl.unshift(imgUrl);
 
             return msg;
         },
@@ -33,7 +33,7 @@ export default _this => [
             if (errInput) return null;
 
             const mp4Url = './data/wechat-manual/video/' + fileName.trim();
-            msg.$Wechat.webData.$mp4info.mp4Url = mp4Url;
+            msg.$Wechat.data.$mp4info.mp4Url = mp4Url;
 
             return msg;
         },

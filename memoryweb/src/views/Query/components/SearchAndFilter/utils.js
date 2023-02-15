@@ -123,7 +123,7 @@ export function makeDefaultSearchForm(DICT) {
             pre = pre.concat(cV.children);
             return pre;
         }, []),
-        $CallLog: { duration: [...DICT.$CallLog.duration] },
+        $CallLog: { data: { duration: [...DICT.$CallLog.data.duration] } },
     };
 }
 
@@ -149,7 +149,7 @@ export function searchFormIsSame(form) {
                     if (fullV.join('&') !== formV.join('&')) return false;
                     break;
                 case '$CallLog':
-                    if (fullV.duration.join('&') !== formV.duration.join('&')) return false;
+                    if (fullV.data.duration.join('&') !== formV.data.duration.join('&')) return false;
                     break;
                 case 'type': {
                     const fullTypeKeys = Object.keys(fullV);
@@ -203,7 +203,7 @@ const DEFAULT_SEARCH_FORM_VALUE_RECEIVE = DEFAULT_SEARCH_FORM.receive.length;
  */
 export function filterMsgArr(all, form) {
     const { time: sTime, device: sDevice, direction: sDirection, send: sSend, receive: sReceive, $CallLog } = form;
-    const sDuration = $CallLog.duration;
+    const sDuration = $CallLog.data.duration;
 
     const sType = flatSearchForm(form.type);
 
@@ -214,7 +214,7 @@ export function filterMsgArr(all, form) {
     const needFilterSender = sSend.length != DEFAULT_SEARCH_FORM_VALUE_SEND;
     const needFilterReceiver = sReceive.length != DEFAULT_SEARCH_FORM_VALUE_RECEIVE;
     const needFilterCallLog =
-        sDuration.join('&') !== DEFAULT_SEARCH_FORM.$CallLog.duration.join('&') &&
+        sDuration.join('&') !== DEFAULT_SEARCH_FORM.$CallLog.data.duration.join('&') &&
         sType.some(v => v.source === 'CallLog');
 
     const arr = all.filter((msg, index) => {
@@ -259,7 +259,7 @@ export function filterMsgArr(all, form) {
         }
 
         if (needFilterCallLog && msgCategory.isCallLog(msg)) {
-            const cD = msg.$CallLog.duration;
+            const cD = msg.$CallLog.data.duration;
             const f_duration = cD >= sDuration[0] && cD <= sDuration[1];
             if (!f_duration) return false;
         }

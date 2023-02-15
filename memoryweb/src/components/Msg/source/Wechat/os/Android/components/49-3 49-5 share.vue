@@ -1,52 +1,52 @@
 <template>
-	<MsgWrap noPadding>
-		<div class="wechat-share">
-			<h4>
-				<a :href="url" target="_blank">{{title}}</a>
-			</h4>
-			<div class="description">
-				<img :src="linkIcon" class="thumb" data-is-icon />
-				{{des}}
-			</div>
-			<div class="bottom">
-				<img :src="appIcon" class="icon-app" data-is-icon />
-				<span class="appName">{{appName}}</span>
-			</div>
-		</div>
-	</MsgWrap>
+    <MsgWrap noPadding>
+        <div class="wechat-share">
+            <h4>
+                <a :href="url" target="_blank">{{ title }}</a>
+            </h4>
+            <div class="description">
+                <img :src="linkIcon" class="thumb" data-is-icon />
+                {{ des }}
+            </div>
+            <div class="bottom">
+                <img :src="appIcon" class="icon-app" data-is-icon />
+                <span class="appName">{{ appName }}</span>
+            </div>
+        </div>
+    </MsgWrap>
 </template>
 <script>
 import _ from 'lodash';
 
 export default {
-	name: 'Msg-Wechat-share',
-	props: {
-		msg: Object,
-	},
-	data: () => ({}),
-	computed: {
-		item() {
-			return this.msg.$Wechat.webData;
-		},
-		url() {
-			return _.get(this.item, 'content.msg.appmsg.url');
-		},
-		title() {
-			return _.get(this.item, 'content.msg.appmsg.title');
-		},
-		des() {
-			return _.get(this.item, 'content.msg.appmsg.des');
-		},
-		appName() {
-			return _.get(this.item, 'content.msg.appinfo.appname');
-		},
-		appIcon() {
-			return _.get(this.item, 'content.msg.appinfo.$appicon') || '/static/msg/source/Wechat/img/app.png';
-		},
-		linkIcon() {
-			return _.get(this.item, '$linkIcon') || '/static/msg/source/Wechat/img/link.jpg';
-		},
-	},
+    name: 'Msg-Wechat-share',
+    props: {
+        msg: Object,
+    },
+    data: () => ({}),
+    computed: {
+        data() {
+            return this.msg.$Wechat.data;
+        },
+        url() {
+            return _.get(this.data, 'appmsg.url');
+        },
+        title() {
+            return _.get(this.data, 'appmsg.title');
+        },
+        des() {
+            return _.get(this.data, 'appmsg.des');
+        },
+        appName() {
+            return _.get(this.data, 'appinfo.appname');
+        },
+        appIcon() {
+            return _.get(this.data, 'appinfo.$appicon') || '/static/msg/source/Wechat/img/app.png';
+        },
+        linkIcon() {
+            return _.get(this.data, '$linkIcon') || '/static/msg/source/Wechat/img/link.jpg';
+        },
+    },
 };
 </script>
 <style lang="sass" scoped>

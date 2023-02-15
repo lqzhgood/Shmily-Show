@@ -2,8 +2,6 @@
     <component :msg="msg" class="source-Wechat" :is="comp"></component>
 </template>
 <script>
-import _ from 'lodash';
-
 const {
     Wechat_Android_type_分享,
     Wechat_Android_type_红包,
@@ -32,9 +30,6 @@ export default {
     },
     data: () => ({}),
     computed: {
-        linkIcon() {
-            return _.get(this.msg.$Wechat.webData, 'content.msg.appinfo');
-        },
         type() {
             return this.msg.type;
         },
@@ -73,7 +68,6 @@ export default {
                 case Wechat_Android_type_自定义表情:
                     // type = 47(微信商店的) 49-8(自己发的)
                     return () => import('./components/47 49-8 emoji');
-
                 case Wechat_Android_type_微信运动:
                     return () => import('./components/49-2 sport');
                 case Wechat_Android_type_分享:
@@ -81,7 +75,6 @@ export default {
                     return () => import('./components/49-3 49-5 share');
                 case Wechat_Android_type_文件:
                     return () => import('./components/49-6 file');
-
                 case Wechat_Android_type_位置共享:
                     // 49-17
                     return () => import('./components/49-17 locationShare');

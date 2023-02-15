@@ -34,7 +34,7 @@ export default {
         },
         realTime() {
             let realTime = '';
-            realTime = _.get(this.msg, '$MobileQQ.s60RealTime', '');
+            realTime = _.get(this.msg, '$MobileQQ.data.s60RealTime', '');
             return realTime;
         },
         title() {

@@ -5,7 +5,7 @@ const { Email_type_附件 } = require('../../../src/components/Msg/source/Email/
 
 function email(m) {
     if (m.type === Email_type_附件) {
-        const files = m.$Email.attachments;
+        const files = m.$Email.data.attachments;
 
         for (let i = 0; i < files.length; i++) {
             const f = files[i];

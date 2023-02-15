@@ -6,7 +6,7 @@ const { QQ_type_文件 } = require('../../../src/components/Msg/source/QQ/types.
 
 function qq_pc(m) {
     if (m.type === QQ_type_文件) {
-        const url = _.get(m, '$QQ.fileParse.url');
+        const url = _.get(m, '$QQ.data.fileParse.url');
         // 可能没有文件名
         if (url !== './data/qq-pc/file/') {
             copy(m, url, { unLog: true });

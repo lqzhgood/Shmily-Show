@@ -18,7 +18,7 @@ const { msgJsonAll } = require('../const.js');
 
 const durationJson = msgJsonAll.filter(m => {
     if (m.source !== 'CallLog') return false;
-    const d = _.get(m, '$CallLog.duration');
+    const d = _.get(m, '$CallLog.data.duration');
     return d;
 });
 
@@ -44,7 +44,7 @@ function calc(calcArr, directionType) {
 
         let source = callType(cV.type); // 主叫 被叫
 
-        const len = _.get(cV, '$CallLog.duration');
+        const len = _.get(cV, '$CallLog.data.duration');
 
         findItemSource(year, cV, v => v.date == y && v.source === source, len);
         findItemSource(month, cV, v => v.date == m && v.source === source, len);
@@ -82,7 +82,7 @@ function calc(calcArr, directionType) {
                 maxDays: [],
                 maxRecord: calcArr
                     .filter(m => callType(m.type) === cV.source)
-                    .reduce((p, m) => Math.max(p, _.get(m, '$CallLog.duration')), 0),
+                    .reduce((p, m) => Math.max(p, _.get(m, '$CallLog.data.duration')), 0),
                 maxRecordDays: [],
             };
             pre.push(f);
@@ -110,7 +110,7 @@ function calc(calcArr, directionType) {
     calcArr.forEach(m => {
         const f = total.type.find(t => t.source === callType(m.type));
 
-        const d = _.get(m, '$CallLog.duration');
+        const d = _.get(m, '$CallLog.data.duration');
         if (d === f.maxRecord) {
             f.maxRecordDays.push(m.day + ' ' + m.time);
         }

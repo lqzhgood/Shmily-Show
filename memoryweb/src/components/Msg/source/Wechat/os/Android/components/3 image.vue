@@ -13,12 +13,12 @@ export default {
 	},
 	data: () => ({}),
 	computed: {
-		item() {
-			return this.msg.$Wechat.webData;
+		data() {
+			return this.msg.$Wechat.data;
 		},
 		src() {
-			const item = this.item;
-			const src = Array.isArray(item.$imgUrl) ? item.$imgUrl[0] : item.$imgUrl;
+			const data = this.data;
+			const src = Array.isArray(data.$imgUrl) ? data.$imgUrl[0] : data.$imgUrl;
 			return src;
 		},
 	},

@@ -1,84 +1,88 @@
 <template>
-	<MsgWrap noPadding>
-		<div class="MobileQQ-Android-share">
-			<div class="title">
-				<a :href="d.url" target="_block">{{d.title}}</a>
-			</div>
-			<div class="body">
-				<div class="des">
-					<p>{{d.des}}</p>
-					<p>{{d.other}}</p>
-				</div>
-				<div class="cover">
-					<img :src="d.coverLink" @error.once="$event=>$event.target.src=defaultCoverLink" data-is-icon />
-				</div>
-			</div>
-			<div class="appInfo">
-				<img
-					:src="d.appIconLocalUrl"
-					@error.once="$event=>$event.target.src=defaultAppIconLocalUrl"
-					class="appIcon"
-					data-is-icon
-				/>
-				<span class="appName">
-					<a :href="d.appLink" target="_blank">{{d.appName}}</a>
-				</span>
-			</div>
-		</div>
-	</MsgWrap>
+    <MsgWrap noPadding>
+        <div class="MobileQQ-Android-share">
+            <div class="title">
+                <a :href="d.url" target="_block">{{ d.title }}</a>
+            </div>
+            <div class="body">
+                <div class="des">
+                    <p>{{ d.des }}</p>
+                    <p>{{ d.other }}</p>
+                </div>
+                <div class="cover">
+                    <img
+                        :src="d.coverLink"
+                        @error.once="$event => ($event.target.src = defaultCoverLink)"
+                        data-is-icon
+                    />
+                </div>
+            </div>
+            <div class="appInfo">
+                <img
+                    :src="d.appIconLocalUrl"
+                    @error.once="$event => ($event.target.src = defaultAppIconLocalUrl)"
+                    class="appIcon"
+                    data-is-icon
+                />
+                <span class="appName">
+                    <a :href="d.appLink" target="_blank">{{ d.appName }}</a>
+                </span>
+            </div>
+        </div>
+    </MsgWrap>
 </template>
 <script>
-import { linkAbsolutely } from "@/utils/index.js";
-
+import { linkAbsolutely } from '@/utils/index.js';
 
 export default {
-	name: 'Source-MobileQQ-Android-share',
-	props: {
-		msg: Object,
-	},
-	data: () => ({
+    name: 'Source-MobileQQ-Android-share',
+    props: {
+        msg: Object,
+    },
+    data: () => ({
         defaultCoverLink: require('./icon/link.jpg'),
         defaultAppIconLocalUrl: require('./icon/web.svg'),
     }),
-	computed: {
-        msgType(){
-            return this.msg.$MobileQQ.raw.msgtype;
+    computed: {
+        data() {
+            return this.msg.$MobileQQ.data || {};
+            // return this.msg.$MobileQQ.raw.$data.msgData;
         },
-		data() {
-			return this.msg.$MobileQQ.raw.$data.msgData;
-		},
-        d(){
-            switch (Number(this.msgType)) {
-                case -5008:
-                   {
-                    const news = this.data.meta?.news || {};
-                     return {
+        shareType() {
+            return this.data.type;
+        },
+        d() {
+            switch (this.shareType) {
+                case 'share-5008': {
+                    const news = this.data;
+                    return {
                         url: linkAbsolutely(news.jumpUrl),
                         title: news.title,
                         des: news.desc,
-                        other:'',
+                        other: '',
                         coverLink: linkAbsolutely(news.preview),
-                        appIconLocalUrl : news.$iconLocalUrl,
+                        appIconLocalUrl: news.$iconLocalUrl,
                         appLink: linkAbsolutely(news.source_url),
-                        appName : news.tag,
+                        appName: news.tag,
                     };
-                   }
-                default:
-                   {
-                     return {
-                        url: this.data.url,
-                        title:this.data.titleValue,
-                        des:this.data.des,
-                        other:  this.data.author,//其他信息 如QQ音乐的作者
-                        coverLink:this.data.$coverLocalUrl || this.defaultCoverLink,
-                        appIconLocalUrl :this.data.$appIconLocalUrl || this.defaultAppIconLocalUrl,
-                        appLink:this.data.appLink,
-                        appName :  this.data.appName,
+                }
+                default: {
+                    // share-2011
+                    const data = this.data;
+                    return {
+                        url: data.url,
+                        title: data.titleValue,
+                        des: data.des,
+                        other: data.author, //其他信息 如QQ音乐的作者
+                        coverLink: data.$coverLocalUrl || this.defaultCoverLink,
+                        appIconLocalUrl: data.$appIconLocalUrl || this.defaultAppIconLocalUrl,
+                        appLink: data.appLink,
+                        appName: data.appName,
                     };
-                   }
+                }
             }
         },
-	},
+    },
 };
 </script>
 <style lang="sass" scoped>

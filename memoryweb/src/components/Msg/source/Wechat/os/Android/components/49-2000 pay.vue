@@ -1,71 +1,68 @@
 <template>
-	<MsgWrap noPadding>
-		<div :class="paySubtype.class" class="wechat-pay">
-			<div class="title">
-				<img :src="iconSrc" class="img" data-is-icon />
-				<h4 class="text">
-					<span>{{text}}</span>
-					<br />
-					<span class="tip">{{paySubtype.text}} {{tip}}</span>
-				</h4>
-			</div>
-			<div class="bottom">微信转账</div>
-		</div>
-	</MsgWrap>
+    <MsgWrap noPadding>
+        <div :class="paySubtype.class" class="wechat-pay">
+            <div class="title">
+                <img :src="iconSrc" class="img" data-is-icon />
+                <h4 class="text">
+                    <span>{{ text }}</span>
+                    <br />
+                    <span class="tip">{{ paySubtype.text }} {{ tip }}</span>
+                </h4>
+            </div>
+            <div class="bottom">微信转账</div>
+        </div>
+    </MsgWrap>
 </template>
 <script>
 import _ from 'lodash';
 
 export default {
-	name: 'Msg-Wechat-pay',
-	props: {
-		msg: Object,
-	},
-	data: () => ({}),
-	computed: {
-		item() {
-			return this.msg.$Wechat.webData;
-		},
-		text() {
-			const item = this.item;
-			return _.get(item, 'content.msg.appmsg.wcpayinfo.feedesc');
-		},
-		tip() {
-			const item = this.item;
-			return _.get(item, 'content.msg.appmsg.title') || '微信转账';
-		},
-		iconSrc() {
-			switch (this.paySubtype.class) {
-				case 'collect':
-					return '/static/msg/source/Wechat/img/transfer_ok.png';
+    name: 'Msg-Wechat-pay',
+    props: {
+        msg: Object,
+    },
+    data: () => ({}),
+    computed: {
+        data() {
+            return this.msg.$Wechat.data;
+        },
+        text() {
+            return _.get(this.data, 'appmsg.wcpayinfo.feedesc');
+        },
+        tip() {
+            return _.get(this.data, 'appmsg.title') || '微信转账';
+        },
+        paySubtype() {
+            const type = _.get(this.data, 'appmsg.wcpayinfo.paysubtype') + '';
+            switch (type) {
+                case '1':
+                    return {
+                        class: 'pay',
+                        text: '已转账',
+                    };
+                case '3':
+                    return {
+                        class: 'collect',
+                        text: '已收钱',
+                    };
+                default:
+                    console.warn(`paysubtype ${type}`);
+                    return {
+                        class: '',
+                        text: '',
+                    };
+            }
+        },
+        iconSrc() {
+            switch (this.paySubtype.class) {
+                case 'collect':
+                    return '/static/msg/source/Wechat/img/transfer_ok.png';
 
-				default:
-					return '/static/msg/source/Wechat/img/transfer.png';
-			}
-		},
-		paySubtype() {
-			const item = this.item;
-			const type = _.get(item, 'content.msg.appmsg.wcpayinfo.paysubtype') + '';
-			switch (type) {
-				case '1':
-					return {
-						class: 'pay',
-						text: '已转账',
-					};
-				case '3':
-					return {
-						class: 'collect',
-						text: '已收钱',
-					};
-				default:
-					console.warn(`paysubtype ${type}`);
-					return {
-						class: '',
-						text: '',
-					};
-			}
-		},
-	},
+                default:
+                    return '/static/msg/source/Wechat/img/transfer.png';
+            }
+        },
+    },
 };
 </script>
 <style lang="sass" scoped>

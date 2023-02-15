@@ -1,68 +1,68 @@
 <template>
-	<MsgWrap noPadding>
-		<div class="user-card">
-			<div class="user-card-title">
-				<img :src="icon" class="user-card-img left" data-is-icon />
-				<div class="user-card-text">
-					<h4>
-						<p>{{name}}</p>
-						<p class="info">{{info}}</p>
-						<pre :title="sign" class="user-card-sign">{{sign}}</pre>
-					</h4>
-				</div>
-			</div>
-			<div class="user-card-bottom">
-				<span>{{province}} {{city}}</span>
-				<span :title="username" class="user-card-id">{{id}}</span>
-			</div>
-		</div>
-	</MsgWrap>
+    <MsgWrap noPadding>
+        <div class="user-card">
+            <div class="user-card-title">
+                <img :src="icon" class="user-card-img left" data-is-icon />
+                <div class="user-card-text">
+                    <h4>
+                        <p>{{ name }}</p>
+                        <p class="info">{{ info }}</p>
+                        <pre :title="sign" class="user-card-sign">{{ sign }}</pre>
+                    </h4>
+                </div>
+            </div>
+            <div class="user-card-bottom">
+                <span>{{ province }} {{ city }}</span>
+                <span :title="username" class="user-card-id">{{ id }}</span>
+            </div>
+        </div>
+    </MsgWrap>
 </template>
 <script>
 import _ from 'lodash';
 
 export default {
-	name: 'Msg-Wechat-userCard',
-	props: {
-		msg: Object,
-	},
-	data: () => ({}),
-	computed: {
-		item() {
-			return this.msg.$Wechat.webData;
-		},
-		icon() {
-			return _.get(this.item, '$url_cover') || '/static/msg/source/Wechat/img/person.jpg';
-		},
-		name() {
-			const item = this.item;
-			return _.get(item, 'content.msg.nickname');
-		},
-		info() {
-			const item = this.item;
-			return _.get(item, 'content.msg.certinfo');
-		},
-		sign() {
-			const item = this.item;
-			return _.get(item, 'content.msg.sign');
-		},
-		id() {
-			const item = this.item;
-			return _.get(item, 'content.msg.alias');
-		},
-		username() {
-			const item = this.item;
-			return _.get(item, 'content.msg.username');
-		},
-		province() {
-			const item = this.item;
-			return _.get(item, 'content.msg.province');
-		},
-		city() {
-			const item = this.item;
-			return _.get(item, 'content.msg.city');
-		},
-	},
+    name: 'Msg-Wechat-userCard',
+    props: {
+        msg: Object,
+    },
+    data: () => ({}),
+    computed: {
+        data() {
+            return this.msg.$Wechat.data;
+        },
+        icon() {
+            return _.get(this.data, '$url_cover') || '/static/msg/source/Wechat/img/person.jpg';
+        },
+        name() {
+            const data = this.data;
+            return _.get(data, 'msg.nickname');
+        },
+        info() {
+            const data = this.data;
+            return _.get(data, 'msg.certinfo');
+        },
+        sign() {
+            const data = this.data;
+            return _.get(data, 'msg.sign');
+        },
+        id() {
+            const data = this.data;
+            return _.get(data, 'msg.alias');
+        },
+        username() {
+            const data = this.data;
+            return _.get(data, 'msg.username');
+        },
+        province() {
+            const data = this.data;
+            return _.get(data, 'msg.province');
+        },
+        city() {
+            const data = this.data;
+            return _.get(data, 'msg.city');
+        },
+    },
 };
 </script>
 <style lang="sass" scoped>

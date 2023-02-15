@@ -23,12 +23,11 @@ export default {
     },
     data: () => ({}),
     computed: {
-        item() {
-            return this.msg.$Wechat.webData;
+        data() {
+            return this.msg.$Wechat.data;
         },
         text() {
-            const item = this.item;
-            return _.get(item, 'content.msg.appmsg.wcpayinfo.sendertitle');
+            return _.get(this.data, 'appmsg.wcpayinfo.sendertitle');
         },
     },
 };
