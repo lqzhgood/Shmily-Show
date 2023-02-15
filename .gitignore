@@ -109,5 +109,6 @@ dist
 /memoryweb/public/json/
 /memoryweb/public/CNAME
 /msgData/tools/Chrome/
-!/msgData/data/资源文件存放处.txt
 /msgData/data/
+!/msgData/data/资源文件存放处.txt
+！/memoryweb/src/assets/data/数据文件存放处.txt
