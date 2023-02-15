@@ -1,0 +1,21 @@
+{
+    "path-autocomplete.pathMappings": {
+        "@": "${folder}/src",
+        "@component": "${folder}/src/components",
+        "@msg": "${folder}/src/assets/data/msg",
+        "@statistic": "${folder}/src/assets/data/statistic"
+    },
+    "cSpell.words": [
+        "antv",
+        "filesize",
+        "hevue",
+        "INNERLINK",
+        "innersearch",
+        "innerstatistic",
+        "nodejieba",
+        "noresize",
+        "Shmily",
+        "unobserve",
+        "VNODE"
+    ]
+}
