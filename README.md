@@ -47,10 +47,11 @@
 
 参考 [./docs/wiki.md](./docs/wiki.md)
 
+
 ## 感谢
 
-#### webd
+http://lqzhgood.github.io/Shmily/guide/other/thanks.html
 
-https://webd.cf/
+## 捐赠
 
-个人测试过性能最好的小型 web 服务器
+点击链接 http://lqzhgood.github.io/Shmily/guide/other/donation.html 看世界上最可爱的动物
