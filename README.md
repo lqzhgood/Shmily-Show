@@ -43,12 +43,6 @@
         - images
         - videos
         ...
-    - comments <--- ModifyServer CRUD [评论] 用到的 [资源文件]  // 详见 wiki 修改与评论
-        // 评论使用 消息ID 作为文件夹名，使用下划线 _ 分割
-        // 文件名 MobileQQ-lqzh-20201212.json _ 时间 2021-10-07_16-35-20 _ 发送方向 go _ 内容MD5 9af1de _ 第 2 条相同消息
-        // 此消息的评论用到了一张 a.png 的图片
-        - MobileQQ-lqzh-20201212.json_2021-10-07_16-35-20_g_9af1de_2 
-            - a.png
 ```
 
 
