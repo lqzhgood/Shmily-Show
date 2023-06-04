@@ -12,7 +12,7 @@
     -   如果依赖安装困难，可以在 [node_modules](https://github.com/lqzhgood/Shmily-Show/tree/node_modules) 分支下载
 -   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
 
-    > 支持多个文件, 不要修改文件名, 文件名会作为 ID 的一部分,
+    > 文件名会作为 ID 的一部分，确认后不要反复修改
 
 -   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
 -   修改 `memoryweb\src\config.js`
