@@ -27,13 +27,13 @@
         -   json 预处理的 json 文件, 每次执行会自动生成. 通过 ajax 方式获取
         -   static 静态文件, 包含图标等
         -   tools
-        -   src 源码目录
+    -   src 源码目录
         -   assets 会打包进代码的资源文件
             -   data
                 -   msg Get 数据文件存放处
                     -   msg-wechat-1.json
                     -   msg-qq-pc-1.json
-                    -   bak 程序启动后会修改上面的文件(添加 ID 等), 此处为原始文件备份(仅根据文件名备份一次)
+                    -   bak 程序启动后会修改上面的文件(添加 ID 等), 此处为原始文件备份(仅根据文件名判断)
                         -   msg-wechat-1.json
                         -   msg-qq-pc-1.json
                 -   comments.json 评论文件
