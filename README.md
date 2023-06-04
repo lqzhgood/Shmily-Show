@@ -69,18 +69,14 @@
 -   将 `msgData` 复制到 `memoryweb/dist`
 -   `memoryweb/dist` 就是最终文件, 双击 `start.bat` 可以直接运行
 
-## 文件结构
-
--   Show
-    -   memoryweb 前端, 用来展示 `数据文件`
-    -   server 后端, 主要用来实现对 `数据` 和 `评论` 的增删改查
-    -   msgData
-        -   data 用来存放 `资源文件`
-        -   tools
-            -   webServer 资源文件 web 服务器
-            -   Chrome 便携版 Chrome , 需要解压
-
 ## Wiki
+
+更详细的如
+
+- 文件夹结构
+- ModifyServer 对消息 增删改查
+- ModifyServer 对评论 增删改擦
+- ...
 
 参考 [./docs/wiki.md](./docs/wiki.md)
 
