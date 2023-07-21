@@ -44,7 +44,7 @@
                         <div>🎯 筛选出来的结果就这么多了哦</div>
                         <div>{{ `${msgShow.length} / ${$store.state.msgAll.length}` }}</div>
                     </div>
-                    <div v-else>😥 到这里已经分手了呀</div>
+                    <div v-else>{{ END_TEXT }}</div>
                 </div>
             </section>
         </el-scrollbar>
@@ -62,7 +62,7 @@
 import dayjs from 'dayjs';
 import _ from 'lodash';
 import { easeInOutCubic } from '@/utils/animate.js';
-import { STEP_LENGTH, STEP_MAX } from '@/config.js';
+import { STEP_LENGTH, STEP_MAX, END_TEXT } from '@/config.js';
 import { FORMAT_TIME_URL } from '@/utils/const.js';
 
 import Msg from '@/components/Msg/';
@@ -89,6 +89,7 @@ export default {
         this.initObserver();
     },
     data: () => ({
+        END_TEXT,
         COMMENT_TYPE_HEADER,
         observer: null, // 监控滚动子元素
         scrollEventLock: false, // 手动滚动时 Lock 不触发滚动事件

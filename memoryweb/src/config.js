@@ -24,6 +24,9 @@ export const DEFAULT_URL_DAY = '1991-11-01_00-00-00';
 // 评论标签 可便于搜索
 export const COMMENT_TAGS = ['#礼物', '#大事件', '//TODO'];
 
+// 滑动到最底部显示的文字
+export const END_TEXT = '🎉 到底了呀~';
+
 // 左上角显示信息
 export const HEAD_INFOS = {
     // 头像图标 留空将默认使用 /static/avatar/default/$direction.png
