@@ -41,9 +41,11 @@ Vue.directive('child-img-view', {
 
             // msg 路径上的 node class 白名单
             if (
-                !$event.path.some(
-                    n => n.classList && Array.from(n.classList).some(v => ['msg_inner', 'commentWrap'].includes(v)),
-                )
+                !$event
+                    .composedPath()
+                    .some(
+                        n => n.classList && Array.from(n.classList).some(v => ['msg_inner', 'commentWrap'].includes(v)),
+                    )
             ) {
                 return;
             }

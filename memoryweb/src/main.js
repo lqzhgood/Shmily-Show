@@ -6,6 +6,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import './plugins/polyfill.js';
 import './plugins/filter.js';
 import './plugins/directive.js';
 import './plugins/element.js';
