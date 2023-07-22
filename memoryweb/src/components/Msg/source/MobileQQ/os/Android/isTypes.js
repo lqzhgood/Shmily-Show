@@ -31,7 +31,7 @@ const is_MobileQQ_Android_type_视频 = m => m.type === MobileQQ_Android_type_�
 const is_MobileQQ_Android_type_语音 = m => m.type === MobileQQ_Android_type_语音;
 const is_MobileQQ_Android_type_文件 = m => m.type === MobileQQ_Android_type_文件;
 
-const is_MobileQQ_Android_type_混合消息 = m => _.get(m, '$MobileQQ.data.type') === MobileQQ_Android_type__混合消息;
+const is_MobileQQ_Android_type_混合消息 = m => _.get(m, '$MobileQQ.type') === MobileQQ_Android_type__混合消息;
 
 module.exports = mixRules(
     {
