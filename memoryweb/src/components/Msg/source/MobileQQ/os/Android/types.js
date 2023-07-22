@@ -1,5 +1,9 @@
 // NODE 环境也会用到 使用 require 模块
 
+// 需要一一对应
+// https://github.com/lqzhgood/Shmily-Get-MobileQQ-Andriod
+// decode\utils\dictMap.js
+
 module.exports.MobileQQ_Android_type_消息 = '消息';
 module.exports.MobileQQ_Android_type_系统消息 = '系统消息';
 module.exports.MobileQQ_Android_type_撤回 = '撤回';
@@ -16,3 +20,6 @@ module.exports.MobileQQ_Android_type_文件 = '文件';
 // _为内置属性
 module.exports.MobileQQ_Android_type__混合消息 = '_混合消息';
 module.exports.MobileQQ_Android_type__文本 = '_文本';
+
+module.exports.MobileQQ_Android_type__分享_2011 = '_分享_2011';
+module.exports.MobileQQ_Android_type__分享_5008 = '_分享_5008';

@@ -34,6 +34,8 @@
 <script>
 import { linkAbsolutely } from '@/utils/index.js';
 
+import { MobileQQ_Android_type__分享_2011, MobileQQ_Android_type__分享_5008 } from '../../types.js';
+
 export default {
     name: 'Source-MobileQQ-Android-share',
     props: {
@@ -53,7 +55,7 @@ export default {
         },
         d() {
             switch (this.shareType) {
-                case 'share-5008': {
+                case MobileQQ_Android_type__分享_5008: {
                     const news = this.data;
                     return {
                         url: linkAbsolutely(news.jumpUrl),
@@ -67,7 +69,7 @@ export default {
                     };
                 }
                 default: {
-                    // share-2011
+                    // MobileQQ_Android_type__分享_2011
                     const data = this.data;
                     return {
                         url: data.url,
