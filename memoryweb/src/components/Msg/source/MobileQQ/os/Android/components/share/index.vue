@@ -11,7 +11,7 @@
                 </div>
                 <div class="cover">
                     <img
-                        :src="d.coverLink"
+                        :src="d.coverLink || ''"
                         @error.once="$event => ($event.target.src = defaultCoverLink)"
                         data-is-icon
                     />
@@ -19,7 +19,7 @@
             </div>
             <div class="appInfo">
                 <img
-                    :src="d.appIconLocalUrl"
+                    :src="d.appIconLocalUrl || ''"
                     @error.once="$event => ($event.target.src = defaultAppIconLocalUrl)"
                     class="appIcon"
                     data-is-icon
@@ -34,7 +34,10 @@
 <script>
 import { linkAbsolutely } from '@/utils/index.js';
 
-import { MobileQQ_Android_type__分享_2011, MobileQQ_Android_type__分享_5008 } from '../../types.js';
+import {
+    MobileQQ_Android_type__分享_2011, // eslint-disable-line no-unused-vars
+    MobileQQ_Android_type__分享_5008,
+} from '../../types.js';
 
 export default {
     name: 'Source-MobileQQ-Android-share',
@@ -51,22 +54,13 @@ export default {
             // return this.msg.$MobileQQ.raw.$data.msgData;
         },
         shareType() {
-            return this.data.type;
+            return this.msg.$MobileQQ.type;
         },
         d() {
             switch (this.shareType) {
                 case MobileQQ_Android_type__分享_5008: {
-                    const news = this.data;
-                    return {
-                        url: linkAbsolutely(news.jumpUrl),
-                        title: news.title,
-                        des: news.desc,
-                        other: '',
-                        coverLink: linkAbsolutely(news.preview),
-                        appIconLocalUrl: news.$iconLocalUrl,
-                        appLink: linkAbsolutely(news.source_url),
-                        appName: news.tag,
-                    };
+                    const data = this.data;
+                    return this.type_5008_structmsg(data);
                 }
                 default: {
                     // MobileQQ_Android_type__分享_2011
@@ -83,6 +77,34 @@ export default {
                     };
                 }
             }
+        },
+    },
+    methods: {
+        type_5008_structmsg(data) {
+            const o = {
+                title: data.title,
+                des: data.desc,
+                appName: data.tag,
+                url: linkAbsolutely(data.jumpUrl),
+                other: '',
+                coverLink: linkAbsolutely(data.preview),
+                appLink: linkAbsolutely(data.source_url),
+                appIconLocalUrl: data.$iconLocalUrl,
+            };
+
+            // $view 一一对应
+            // https://github.com/lqzhgood/Shmily-Get-MobileQQ-Andriod
+            // decode\typeHandle\share5008\app\structmsg
+            switch (data.$view) {
+                case 'news': {
+                    break;
+                }
+                case 'music': {
+                    o.url = linkAbsolutely(data.musicUrl);
+                    break;
+                }
+            }
+            return o;
         },
     },
 };
