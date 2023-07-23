@@ -20,6 +20,8 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
+@import '~@/styles/vars.module.sass'
+
 .Msg-common-image
     cursor: pointer
     display: flex
@@ -28,5 +30,5 @@ export default {
     .img
         min-width: 150px
         min-height: 50px
-        max-width: 340px !important
+        max-width: $msgBoxMaxWidth !important
 </style>

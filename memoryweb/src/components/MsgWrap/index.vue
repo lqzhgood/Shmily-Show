@@ -34,7 +34,7 @@ export default {
     word-break: break-all
     word-wrap: break-word
     white-space: pre-wrap // 保留所有的空格和回车，但是允许折行。
-    max-width: 340px
+    max-width: $msgBoxMaxWidth
     ::v-deep
         img, video ,audio
             vertical-align: bottom
