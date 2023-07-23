@@ -97,7 +97,7 @@ export default {
             .avatar
                 max-width: 40px
         .right
-            flex: 0 1 50px
+            flex: 0 0 50px
         .center
             flex: 1 1 auto
             .info
@@ -110,6 +110,9 @@ export default {
                     font-size: 12px
             img
                 max-width: 140px
+        &:last-child
+            .center .row hr
+                opacity: 0
 </style>
 <style lang="sass" scoped>
 .wechat-chatRecord

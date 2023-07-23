@@ -15,6 +15,7 @@ const {
     MobileQQ_Android_type_视频,
     MobileQQ_Android_type_语音,
     MobileQQ_Android_type_文件,
+    MobileQQ_Android_type_聊天记录,
     MobileQQ_Android_type__混合消息,
 } = require('./types.js');
 
@@ -30,6 +31,7 @@ const is_MobileQQ_Android_type_视频通话 = m => m.type === MobileQQ_Android_t
 const is_MobileQQ_Android_type_视频 = m => m.type === MobileQQ_Android_type_视频;
 const is_MobileQQ_Android_type_语音 = m => m.type === MobileQQ_Android_type_语音;
 const is_MobileQQ_Android_type_文件 = m => m.type === MobileQQ_Android_type_文件;
+const is_MobileQQ_Android_type_聊天记录 = m => m.type === MobileQQ_Android_type_聊天记录;
 
 const is_MobileQQ_Android_type_混合消息 = m => _.get(m, '$MobileQQ.type') === MobileQQ_Android_type__混合消息;
 
@@ -47,6 +49,7 @@ module.exports = mixRules(
         is_MobileQQ_Android_type_视频,
         is_MobileQQ_Android_type_语音,
         is_MobileQQ_Android_type_文件,
+        is_MobileQQ_Android_type_聊天记录,
         is_MobileQQ_Android_type_混合消息,
     },
     isMobileQQ_Android,

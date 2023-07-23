@@ -15,6 +15,7 @@ const {
     MobileQQ_Android_type_视频,
     MobileQQ_Android_type_语音,
     MobileQQ_Android_type_文件,
+    MobileQQ_Android_type_聊天记录,
 } = require('./types');
 
 const {
@@ -30,6 +31,7 @@ const {
     is_MobileQQ_Android_type_视频, // eslint-disable-line no-unused-vars
     is_MobileQQ_Android_type_语音, // eslint-disable-line no-unused-vars
     is_MobileQQ_Android_type_文件, // eslint-disable-line no-unused-vars
+    is_MobileQQ_Android_type_聊天记录, // eslint-disable-line no-unused-vars
     is_MobileQQ_Android_type_混合消息,
 } = require('./isTypes');
 
@@ -66,11 +68,13 @@ export default {
                 case MobileQQ_Android_type_视频通话:
                     return () => import('./components/voip.vue');
                 case MobileQQ_Android_type_视频:
-                    return () => import('./components/video');
+                    return () => import('./components/video.vue');
                 case MobileQQ_Android_type_语音:
-                    return () => import('./components/audio');
+                    return () => import('./components/audio.vue');
                 case MobileQQ_Android_type_文件:
-                    return () => import('./components/file');
+                    return () => import('./components/file.vue');
+                case MobileQQ_Android_type_聊天记录:
+                    return () => import('./components/chatRecord.vue');
                 default:
                     return () => import('@/components/Msg/source/Unknown.vue');
             }
