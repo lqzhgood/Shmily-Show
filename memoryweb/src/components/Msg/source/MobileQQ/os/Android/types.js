@@ -17,6 +17,7 @@ module.exports.MobileQQ_Android_type_视频 = '视频';
 module.exports.MobileQQ_Android_type_语音 = '语音';
 module.exports.MobileQQ_Android_type_文件 = '文件';
 module.exports.MobileQQ_Android_type_聊天记录 = '聊天记录';
+module.exports.MobileQQ_Android_type_未知 = '未知';
 
 // _为内置属性
 module.exports.MobileQQ_Android_type__混合消息 = '_混合消息';
