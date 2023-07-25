@@ -19,7 +19,7 @@
                                 data-is-icon
                                 :key="i"
                             />
-                            <video :src="p.$url" v-else :key="i"></video>
+                            <video controls :src="p.$url" v-else :key="i"></video>
                         </template>
                     </template>
                     <img
