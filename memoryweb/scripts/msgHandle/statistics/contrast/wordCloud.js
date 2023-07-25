@@ -39,7 +39,7 @@ fs.mkdirpSync(goDir);
 fs.writeFileSync(path.join(goDir, 'wordCloud.json'), JSON.stringify(WORDS_GO, null, 4));
 
 function makeWords(arr) {
-    if (arr.length === 0 ) return [];
+    if (arr.length === 0) return [];
     let words = Object.create(null);
     for (let i = 0; i < arr.length; i++) {
         const t = clipContent(arr[i]);
@@ -58,7 +58,7 @@ function makeWords(arr) {
         'desc',
     );
 
-    words[0].i = 1;
+    if (words[0]) words[0].i = 1;
 
     for (let i = 1; i < words.length; i++) {
         const wl = words[i - 1];
