@@ -25,6 +25,8 @@ const {
      Wechat_Android_type_视频号,
      Wechat_Android_type_收藏,
      Wechat_Android_type__分享_视频,
+     Wechat_Android_type__系统消息_群聊_入群消息,
+     Wechat_Android_type__消息_发起语音通话,
 } = require('./types.js');
 
 const is_Wechat_Android_type_分享 = m => m.type === Wechat_Android_type_分享;
@@ -49,6 +51,8 @@ const is_Wechat_Android_type_视频号 = m => m.type === Wechat_Android_type_视
 const is_Wechat_Android_type_收藏 = m => m.type === Wechat_Android_type_收藏;
 
 const is_Wechat_Android_type__分享_视频 = m => _.get(m, '$Wechat.type') === Wechat_Android_type__分享_视频;
+const is_Wechat_Android_type__系统消息_群聊_入群消息 = m => _.get(m, '$Wechat.type') === Wechat_Android_type__系统消息_群聊_入群消息;
+const is_Wechat_Android_type__消息_发起语音通话 = m => _.get(m, '$Wechat.type') === Wechat_Android_type__消息_发起语音通话;
 
 module.exports = mixRules(
     {
@@ -74,6 +78,8 @@ module.exports = mixRules(
         is_Wechat_Android_type_收藏,
 
         is_Wechat_Android_type__分享_视频,
+        is_Wechat_Android_type__系统消息_群聊_入群消息,
+        is_Wechat_Android_type__消息_发起语音通话,
     },
     isWechat
 );

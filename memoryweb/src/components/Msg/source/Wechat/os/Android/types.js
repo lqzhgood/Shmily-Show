@@ -21,3 +21,5 @@ module.exports.Wechat_Android_type_收藏 = '收藏';
 
 // _为内置属性
 module.exports.Wechat_Android_type__分享_视频 = '_分享_视频';
+module.exports.Wechat_Android_type__系统消息_群聊_入群消息 = '_系统消息_群聊_入群消息';
+module.exports.Wechat_Android_type__消息_发起语音通话 = '_消息_发起语音通话';

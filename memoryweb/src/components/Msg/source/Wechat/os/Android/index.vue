@@ -26,7 +26,7 @@ const {
     Wechat_Android_type_收藏,
 } = require('./types.js');
 
-const { is_Wechat_Android_type__分享_视频 } = require('./isTypes.js');
+const { is_Wechat_Android_type__分享_视频, is_Wechat_Android_type__系统消息_群聊_入群消息 } = require('./isTypes.js');
 
 export default {
     name: 'msg-source-wechat',
@@ -42,6 +42,8 @@ export default {
             const type = this.type;
             if (is_Wechat_Android_type__分享_视频(this.msg)) {
                 return () => import('./components/shareVideo.vue');
+            } else if (is_Wechat_Android_type__系统消息_群聊_入群消息(this.msg)) {
+                return () => import('./components/system/JoinGroup.vue');
             }
 
             switch (type) {
@@ -72,7 +74,7 @@ export default {
                     return () => import('./components/50 voip');
                 case Wechat_Android_type_系统消息:
                     // type == 10000
-                    return () => import('./components/10000 system');
+                    return () => import('./components/system/common.vue');
                 case Wechat_Android_type_自定义表情:
                     // type = 47(微信商店的) 49-8(自己发的)
                     return () => import('./components/47 49-8 emoji');
