@@ -50,55 +50,55 @@ export default {
                 case Wechat_Android_type_消息:
                     // type == 1
                     // type == 49 && content.msg.appmsg.type == 1  带链接文本
-                    return () => import('./components/1 49-1 text');
+                    return () => import('./components/text');
                 case Wechat_Android_type_图片:
                     // type == 3
-                    return () => import('./components/3 image');
+                    return () => import('./components/image');
                 case Wechat_Android_type_语音:
                     // type == 34
-                    return () => import('./components/34 audio');
+                    return () => import('./components/audio');
                 case Wechat_Android_type_撤回:
                     // type == 38
-                    return () => import('./components/38 withdraw');
+                    return () => import('./components/withdraw');
                 case Wechat_Android_type_名片:
                     // type == 42
-                    return () => import('./components/42 userCard');
+                    return () => import('./components/userCard');
                 case Wechat_Android_type_视频:
                     // type == 43 || type == 62)
-                    return () => import('./components/43 62 video');
+                    return () => import('./components/video');
                 case Wechat_Android_type_位置:
                     // type == 48
-                    return () => import('./components/48 location');
+                    return () => import('./components/location');
                 case Wechat_Android_type_视频通话:
                     // type == 50
-                    return () => import('./components/50 voip');
+                    return () => import('./components/voip');
                 case Wechat_Android_type_系统消息:
                     // type == 10000
                     return () => import('./components/system/common.vue');
                 case Wechat_Android_type_自定义表情:
                     // type = 47(微信商店的) 49-8(自己发的)
-                    return () => import('./components/47 49-8 emoji');
+                    return () => import('./components/emoji');
                 case Wechat_Android_type_微信运动:
-                    return () => import('./components/49-2 sport');
+                    return () => import('./components/sport');
                 case Wechat_Android_type_分享:
                     // 49-3 49-5
-                    return () => import('./components/49-3 49-5 share');
+                    return () => import('./components/share');
                 case Wechat_Android_type_文件:
-                    return () => import('./components/49-6 file');
+                    return () => import('./components/file');
                 case Wechat_Android_type_位置共享:
                     // 49-17
-                    return () => import('./components/49-17 locationShare');
+                    return () => import('./components/locationShare');
                 case Wechat_Android_type_聊天记录:
-                    return () => import('./components/49-19 chatRecord');
+                    return () => import('./components/chatRecord');
                 case Wechat_Android_type_小程序:
                     // 49-33 40-36
-                    return () => import('./components/49-33 40-36 app');
+                    return () => import('./components/app');
                 case Wechat_Android_type_转账:
                     // 49-2000
-                    return () => import('./components/49-2000 pay');
+                    return () => import('./components/pay');
                 case Wechat_Android_type_红包:
                     // 49-2001
-                    return () => import('./components/49-2001 hongBao');
+                    return () => import('./components/hongBao');
                 case Wechat_Android_type_视频号:
                     return () => import('./components/videoChannel.vue');
                 case Wechat_Android_type_收藏:
