@@ -1,5 +1,5 @@
 <template>
-    <div :class="{ noPadding, isDev }" class="Msg-common-Wrap">
+    <div :class="{ noPadding, isDev }" class="Msg-common-Wrap" :style="{ backgroundColor }">
         <div class="chatroom" :class="MSG_DIRECTION" v-if="isChatroom" @click="DevChatroom">
             <img src="/static/msg/source/Common/icon/chatroom.svg" class="icon-chatroom" data-is-icon />
             <span class="chatroomName">{{ chatroomName }}</span>
@@ -9,6 +9,7 @@
 </template>
 <script>
 import _ from 'lodash';
+import styles from '@/styles/vars.module.sass';
 
 export default {
     name: 'Msg-common-Wrap',
@@ -17,6 +18,10 @@ export default {
         noPadding: {
             type: Boolean,
             default: false,
+        },
+        backgroundColor: {
+            type: String,
+            default: styles.msgBackgroundColor,
         },
     },
     data: () => ({}),
@@ -50,7 +55,6 @@ export default {
 
 .Msg-common-Wrap
     padding: 10px
-    background-color: $msgBackgroundColor
     text-align: left
     font-size: 14px
     line-height: 1.5em
@@ -82,9 +86,11 @@ export default {
         background: #f6f8fa
         position: relative
         border: 1px solid #e1e4e8
-        margin: -10px -10px 0
+        margin: -10px -10px 5px
         display: flex
         align-items: center
+        border-bottom-left-radius: 6px
+        border-bottom-right-radius: 6px
         .icon-chatroom
             max-height: 14px
             margin: 0 5px
