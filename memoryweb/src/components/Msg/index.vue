@@ -31,10 +31,6 @@ export default {
     mounted() {
         this.mountedFN && this.mountedFN(this.$refs.msg);
     },
-    provide() {
-        return { MSG: this.msg, MSG_DIRECTION: this.MSG_DIRECTION };
-    },
-
     props: {
         msg: {
             type: Object,

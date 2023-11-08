@@ -2,13 +2,7 @@
     <div :class="msg.direction === 'come' ? 'left' : 'right'" class="msg_inner">
         <!-- v-img-attr-extra 放到 {msg} 上面能节省一次计算 ，放到 msg_inner 上面会计算2次。 msg_inner 插入 和 {msg} 插入 -->
         <Wechat_Android :msg="msg" v-if="mc.isWechat(msg)" />
-        <QQ
-            :data-id="msg.id"
-            :msg="msg"
-            v-else-if="mc.isQQ(msg)"
-            v-img-attr-extra
-            v-img-is-face="'/data/qq-pc/face/'"
-        />
+        <QQ :data-id="msg.id" :msg="msg" v-else-if="mc.isQQ(msg)" v-img-attr-extra v-img-is-face="'/data/qq-pc/face/'" />
 
         <MobileQQ_Android :msg="msg" v-else-if="mc.isMobileQQ_Android(msg)" />
         <MobileQQ_s60v3 :msg="msg" v-else-if="mc.isMobileQQ_s60v3(msg)" v-img-attr-extra />
@@ -27,6 +21,9 @@ const msgCategory = require('@/components/Msg/utils/isSource.js');
 
 export default {
     name: 'Msg-MsgInner',
+    provide() {
+        return { MSG: this.msg, MSG_DIRECTION: this.MSG_DIRECTION };
+    },
     props: {
         msg: Object,
     },
