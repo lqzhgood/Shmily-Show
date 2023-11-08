@@ -65,6 +65,7 @@ export default {
         padding: 10px 20px 0
         .content
             display: flex
+            margin-bottom: 10px
             .title
                 flex: 1
                 a
