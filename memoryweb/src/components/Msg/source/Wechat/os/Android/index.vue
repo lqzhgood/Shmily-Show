@@ -2,7 +2,31 @@
     <component :msg="msg" class="source-Wechat" :is="comp"></component>
 </template>
 <script>
-const { Wechat_Android_type_分享, Wechat_Android_type_红包, Wechat_Android_type_聊天记录, Wechat_Android_type_名片, Wechat_Android_type_视频, Wechat_Android_type_视频通话, Wechat_Android_type_图片, Wechat_Android_type_微信运动, Wechat_Android_type_位置, Wechat_Android_type_位置共享, Wechat_Android_type_文件, Wechat_Android_type_系统消息, Wechat_Android_type_消息, Wechat_Android_type_小程序, Wechat_Android_type_语音, Wechat_Android_type_转账, Wechat_Android_type_自定义表情, Wechat_Android_type_撤回, Wechat_Android_type_视频号, Wechat_Android_type_收藏 } = require('./types.js');
+// prettier-ignore
+const {
+    Wechat_Android_type_分享,
+    Wechat_Android_type_红包,
+    Wechat_Android_type_聊天记录,
+    Wechat_Android_type_名片,
+    Wechat_Android_type_视频,
+    Wechat_Android_type_视频通话,
+    Wechat_Android_type_图片,
+    Wechat_Android_type_微信运动,
+    Wechat_Android_type_位置,
+    Wechat_Android_type_位置共享,
+    Wechat_Android_type_文件,
+    Wechat_Android_type_系统消息,
+    Wechat_Android_type_消息,
+    Wechat_Android_type_小程序,
+    Wechat_Android_type_语音,
+    Wechat_Android_type_转账,
+    Wechat_Android_type_自定义表情,
+    Wechat_Android_type_撤回,
+    Wechat_Android_type_视频号,
+    Wechat_Android_type_收藏,
+} = require('./types.js');
+
+const { is_Wechat_Android_type__分享_视频 } = require('./isTypes.js');
 
 export default {
     name: 'msg-source-wechat',
@@ -16,6 +40,9 @@ export default {
         },
         comp() {
             const type = this.type;
+            if (is_Wechat_Android_type__分享_视频(this.msg)) {
+                return () => import('./components/shareVideo.vue');
+            }
 
             switch (type) {
                 case Wechat_Android_type_消息:

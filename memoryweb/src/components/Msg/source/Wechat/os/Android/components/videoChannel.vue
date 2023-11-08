@@ -9,9 +9,11 @@
                 <div class="title">
                     <img :src="avatar" alt="avatar" class="avatar" data-is-icon />
                     <div class="nickname">{{ nickname }}</div>
-                    <div class="duration" v-if="videoPlayDuration">{{ videoPlayDuration }}s</div>
+                    <div class="duration" v-if="videoPlayDuration">{{ videoPlayDuration }}</div>
                 </div>
-                <div class="desc">{{ desc }}</div>
+                <div class="desc">
+                    <a :href="url" target="_blank">{{ desc }}</a>
+                </div>
                 <WechatMsgFooter text="视频号" icon="/static/icon/type/Wechat-视频号.png" />
             </div>
         </div>
@@ -20,6 +22,7 @@
 <script>
 import _ from 'lodash';
 import WechatMsgFooter from './components/Footer';
+import { formatSecond } from '@/utils/index';
 
 export default {
     name: 'Msg-Wechat-VideoChannel',
@@ -47,10 +50,10 @@ export default {
             return _.get(this.media, 'coverUrl', '/static/msg/source/Wechat/img/video_channel_default_cover.png');
         },
         url() {
-            return _.get(this.media, 'url');
+            return this.media.url;
         },
         videoPlayDuration() {
-            return _.get(this.media, 'videoPlayDuration');
+            return this.media.videoPlayDuration ? formatSecond(this.media.videoPlayDuration) : null;
         },
     },
     components: { WechatMsgFooter },
@@ -76,7 +79,15 @@ export default {
                 border-radius: 50%
             .nickname
                 flex: 1
+            .duration
+                font-size: 12px
+                color: #7d7d7d
         .desc
             border-bottom: 1px solid #e6e6e6
             padding-bottom: 15px
+            a
+                color: inherit
+                text-decoration: none
+                &:hover
+                    text-decoration: underline
 </style>

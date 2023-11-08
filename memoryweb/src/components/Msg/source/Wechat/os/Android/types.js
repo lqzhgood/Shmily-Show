@@ -18,3 +18,6 @@ module.exports.Wechat_Android_type_自定义表情 = '自定义表情';
 module.exports.Wechat_Android_type_撤回 = '撤回';
 module.exports.Wechat_Android_type_视频号 = '视频号';
 module.exports.Wechat_Android_type_收藏 = '收藏';
+
+// _为内置属性
+module.exports.Wechat_Android_type__分享_视频 = '_分享_视频';
