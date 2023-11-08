@@ -16,3 +16,5 @@ module.exports.Wechat_Android_type_语音 = '语音';
 module.exports.Wechat_Android_type_转账 = '转账';
 module.exports.Wechat_Android_type_自定义表情 = '自定义表情';
 module.exports.Wechat_Android_type_撤回 = '撤回';
+module.exports.Wechat_Android_type_视频号 = '视频号';
+module.exports.Wechat_Android_type_收藏 = '收藏';

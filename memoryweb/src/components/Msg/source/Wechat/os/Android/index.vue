@@ -2,26 +2,7 @@
     <component :msg="msg" class="source-Wechat" :is="comp"></component>
 </template>
 <script>
-const {
-    Wechat_Android_type_分享,
-    Wechat_Android_type_红包,
-    Wechat_Android_type_聊天记录,
-    Wechat_Android_type_名片,
-    Wechat_Android_type_视频,
-    Wechat_Android_type_视频通话,
-    Wechat_Android_type_图片,
-    Wechat_Android_type_微信运动,
-    Wechat_Android_type_位置,
-    Wechat_Android_type_位置共享,
-    Wechat_Android_type_文件,
-    Wechat_Android_type_系统消息,
-    Wechat_Android_type_消息,
-    Wechat_Android_type_小程序,
-    Wechat_Android_type_语音,
-    Wechat_Android_type_转账,
-    Wechat_Android_type_自定义表情,
-    Wechat_Android_type_撤回,
-} = require('./types.js');
+const { Wechat_Android_type_分享, Wechat_Android_type_红包, Wechat_Android_type_聊天记录, Wechat_Android_type_名片, Wechat_Android_type_视频, Wechat_Android_type_视频通话, Wechat_Android_type_图片, Wechat_Android_type_微信运动, Wechat_Android_type_位置, Wechat_Android_type_位置共享, Wechat_Android_type_文件, Wechat_Android_type_系统消息, Wechat_Android_type_消息, Wechat_Android_type_小程序, Wechat_Android_type_语音, Wechat_Android_type_转账, Wechat_Android_type_自定义表情, Wechat_Android_type_撤回, Wechat_Android_type_视频号, Wechat_Android_type_收藏 } = require('./types.js');
 
 export default {
     name: 'msg-source-wechat',
@@ -89,6 +70,10 @@ export default {
                 case Wechat_Android_type_红包:
                     // 49-2001
                     return () => import('./components/49-2001 hongBao');
+                case Wechat_Android_type_视频号:
+                    return () => import('./components/videoChannel.vue');
+                case Wechat_Android_type_收藏:
+                    return () => import('./components/collect.vue');
                 default:
                     return () => import('@/components/Msg/source/Unknown.vue');
             }

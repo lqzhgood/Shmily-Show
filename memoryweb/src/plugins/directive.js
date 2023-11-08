@@ -36,17 +36,12 @@ Vue.directive('child-img-view', {
             if (elm.nodeName.toUpperCase() !== 'IMG') return;
             // 有 no-img-view 的 IMG 不处理
             if (elm.hasAttribute('no-img-view')) return;
+            if (elm.hasAttribute('data-is-icon')) return;
             // msg_inner 这个是 Msg 组件下  content 的 class [msg_inner]
             // 保证仅对 msg 内容的图片进行处理
 
             // msg 路径上的 node class 白名单
-            if (
-                !$event
-                    .composedPath()
-                    .some(
-                        n => n.classList && Array.from(n.classList).some(v => ['msg_inner', 'commentWrap'].includes(v)),
-                    )
-            ) {
+            if (!$event.composedPath().some(n => n.classList && Array.from(n.classList).some(v => ['msg_inner', 'commentWrap'].includes(v)))) {
                 return;
             }
 
