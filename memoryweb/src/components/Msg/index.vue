@@ -1,5 +1,5 @@
 <template>
-    <article :class="msg.direction === 'come' ? 'left' : 'right'" :data-id="msg.id" class="row" ref="msg">
+    <article :class="MSG_DIRECTION" :data-id="msg.id" class="row" ref="msg">
         <InfoPopover :msg="msg">
             <Avatar :msg="msg" class="avatar" />
         </InfoPopover>
@@ -31,6 +31,10 @@ export default {
     mounted() {
         this.mountedFN && this.mountedFN(this.$refs.msg);
     },
+    provide() {
+        return { MSG: this.msg, MSG_DIRECTION: this.MSG_DIRECTION };
+    },
+
     props: {
         msg: {
             type: Object,
@@ -52,6 +56,9 @@ export default {
         devOpenCopyAssetSrc: null,
     }),
     computed: {
+        MSG_DIRECTION() {
+            return this.msg.direction === 'come' ? 'left' : 'right';
+        },
         isDev() {
             return this.$store.getters['app/isDev'];
         },
@@ -72,7 +79,7 @@ export default {
                 },
                 () => {
                     Message.error(`复制链接失败 ${url}`);
-                },
+                }
             );
         },
     },

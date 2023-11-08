@@ -1,11 +1,18 @@
 <template>
     <div :class="{ noPadding, isDev }" class="Msg-common-Wrap">
+        <div class="chatroom" :class="MSG_DIRECTION" v-if="isChatroom" @click="DevChatroom">
+            <img src="/static/msg/source/Common/icon/chatroom.svg" class="icon-chatroom" data-is-icon />
+            <span class="chatroomName">{{ chatroomName }}</span>
+        </div>
         <slot></slot>
     </div>
 </template>
 <script>
+import _ from 'lodash';
+
 export default {
     name: 'Msg-common-Wrap',
+    inject: ['MSG', 'MSG_DIRECTION'],
     props: {
         noPadding: {
             type: Boolean,
@@ -16,6 +23,24 @@ export default {
     computed: {
         isDev() {
             return this.$store.getters['app/isDev'];
+        },
+        msg() {
+            return this.MSG;
+        },
+        isChatroom() {
+            if (!this.msg) return false;
+            return !!_.get(this.msg, `$${this.msg.source}.data.chatroom`);
+        },
+        chatroomName() {
+            if (!this.msg) return '';
+            return _.get(this.msg, `$${this.msg.source}.data.chatroom.$name`);
+        },
+    },
+    methods: {
+        DevChatroom() {
+            if (!this.msg) return;
+            const o = _.get(this.msg, `$${this.msg.source}.key.chatroom`);
+            console.log('chatroom', o);
         },
     },
 };
@@ -41,10 +66,30 @@ export default {
             max-width: 100% // 图片不能设 min-width 因为表情只有那么大 , max-width 是为了不让竖图撑满屏幕
     &.noPadding
         padding: 0
+        .chatroom
+            margin: 0
     &.isDev
         ::v-deep
             img:not([data-is-icon]):not([alt])
                 outline: 2px dashed #ff4d4f !important
             img[alt]:not([data-is-icon]):not([title])
                 outline: 2px dashed blue !important
+    .chatroom
+        font-size: 12px
+        line-height: 12px
+        height: 12px
+        padding: 5px
+        background: #f6f8fa
+        position: relative
+        border: 1px solid #e1e4e8
+        margin: -10px -10px 0
+        display: flex
+        align-items: center
+        .icon-chatroom
+            max-height: 14px
+            margin: 0 5px
+        .chatroomName
+            cursor: pointer
+        &.right
+            justify-content: flex-end
 </style>
