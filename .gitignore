@@ -1,0 +1,9 @@
+.history
+
+node_modules
+
+msgData
+
+memoryweb/dist/
+memoryweb/public/
+memoryweb/src/
