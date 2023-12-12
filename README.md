@@ -16,8 +16,10 @@
 
 4.   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
 
+<details> <summary><code>结构示例</code></summary>
+    
 ```
-// 结构示例, 更详细的参考 wiki /docs/dev.md#目录说明
+// 更详细的参考 wiki /docs/dev.md#目录说明
 
 - memoryweb
   - src
@@ -45,25 +47,28 @@
         ...
 ```
 
+</details>
+
+
 
 5.  [可选] 修改 `memoryweb\src\config.js`
     > 基本上都不需要改动, 如果要个性化的 (`HEAD_INFOS`等) 可以改一下
-7.  [可选] 修改 `memoryweb\script\user\`
+6.  [可选] 修改 `memoryweb\script\user\`
 
         - banDict.js 词云中不需要的词可以在这里过滤
         - commentTag.js 需要在统计页中出现次数的关键词
         - userDict.txt 用户词典 参考 https://github.com/yanyiwu/nodejieba
         - userGroup.js 可以对 sender / receiver 分组
 
-    > [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
+7.  [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
 
-8   进入 `memoryweb` 执行 `npm run build`
-9   解压缩 `msgData\tools\Chrome.zip`
+8.   进入 `memoryweb` 执行 `npm run build`
+9.   解压缩 `msgData\tools\Chrome.zip`
     -   确保解压后路径 `msgData\tools\Chrome\MyChrome.exe` 正确
     -   删除 `Chrome.z*` 压缩包
-10   将 `msgData` 复制到 `memoryweb/dist`
-11   `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览 
-11    完成
+10.   将 `msgData` 复制到 `memoryweb/dist`
+11.   `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览 
+12.    完成
 
 
 ## Wiki
