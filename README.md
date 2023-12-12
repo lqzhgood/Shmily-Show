@@ -58,7 +58,7 @@
 
         - banDict.js 词云中不需要的词可以在这里过滤
         - commentTag.js 需要在统计页中出现次数的关键词
-        - userDict.txt 用户词典 参考 https://github.com/yanyiwu/nodejieba
+        - userDict.txt 用户词典 参考 https://github.com/fxsjy/jieba#使用示例
         - userGroup.js 可以对 sender / receiver 分组
 
 7.  [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
