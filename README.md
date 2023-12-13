@@ -74,8 +74,11 @@
    -   删除 `Chrome.z*` 压缩包
      
 11. 将 `msgData` 复制到 `memoryweb/dist`
-12. `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览 
-13. 完成
+12. `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览
+    - [不推荐] 部署到服务器
+        - 项目为本地应用设计, 数据量极大([FAQ](https://github.com/lqzhgood/Shmily-Show/blob/main/docs/Q_A.md#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%9F%E6%88%90%E7%9A%84%E6%95%B0%E6%8D%AE-json-%E8%BF%99%E4%B9%88%E5%A4%A7))
+        - 包含完整的数据导出, 不限于 Shimly 上显示的. 可能会暴露你意想不到的隐私
+14. 完成
 
 
 ## Wiki
@@ -88,6 +91,11 @@
 - ...
 
 参考 [./docs/wiki.md](./docs/wiki.md)
+
+
+## feature
+
+- [ ] 数字孪生 根据 自己/对方 的聊天记录生成模型, 构建一个有 自己/对方 "人设" 的生成式对话 Ai
 
 
 ## 感谢
