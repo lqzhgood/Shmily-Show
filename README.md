@@ -8,16 +8,23 @@
 
 ## 使用
 
--   安装 node 环境 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs.html]
-    -   如果依赖安装困难，可以在 [node_modules](https://github.com/lqzhgood/Shmily-Show/tree/node_modules) 分支下载
--   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
+0. 🎞️ 安装 node 环境 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs.html]
+1. 🏞️ 下载本项目并解压 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/github-down-repo.html]
+2. 🎞️ 安装依赖 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs-dependencies.html]
+3. 将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
 
     > 文件名会作为 ID 的一部分，确认后不要反复修改
 
--   将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
-
+4. 将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
 ```
-// 结构示例, 更详细的参考 wiki /docs/dev.md#目录说明
+如果想和以后的记录累计, 请自行保存 `数据文件` 和 `资源文件`
+和以后的数据一起重复 Show(本项目) 的过程即可一起累计统计与时间线显示
+```
+
+<details> <summary><code>结构示例</code></summary>
+    
+```
+// 更详细的参考 wiki /docs/dev.md#目录说明
 
 - memoryweb
   - src
@@ -45,23 +52,34 @@
         ...
 ```
 
+</details>
 
--   修改 `memoryweb\src\config.js`
--   修改 `memoryweb\script\user\`
+
+
+5. [可选] 修改 `memoryweb\src\config.js`
+   > 基本上都不需要改动, 如果要个性化的 (`HEAD_INFOS`等) 可以改一下
+6. [可选] 修改 `memoryweb\script\user\`
 
         - banDict.js 词云中不需要的词可以在这里过滤
-        - commentTag.js 需要在统计页中出现次数的关键词
-        - userDict.txt 用户词典 参考 https://github.com/yanyiwu/nodejieba
-        - userGroup.js 可以对 sender / receiver 分组
+        - userDict.txt 词云用到的分词-用户词典 参考 https://github.com/fxsjy/jieba#使用示例
+        - commentTag.js 统计评论中 Tag 出现的次数
+        - userGroup.js 对 sender / receiver 分组
 
-    > [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
+8. [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
 
--   进入 `memoryweb` 执行 `npm run build`
--   解压缩 `msgData\tools\Chrome.zip`
-    -   确保解压后路径 `msgData\tools\Chrome\MyChrome.exe` 正确
-    -   删除 `Chrome.z*` 压缩包
--   将 `msgData` 复制到 `memoryweb/dist`
--   `memoryweb/dist` 就是最终文件, 双击 `start.bat` 可以直接运行
+9. 进入 `memoryweb` 执行 `npm run build`
+10. 解压缩 `msgData\tools\Chrome.zip`
+    
+   -   确保解压后路径 `msgData\tools\Chrome\MyChrome.exe` 正确 // 可能被误杀
+   -   删除 `Chrome.z*` 压缩包
+     
+11. 将 `msgData` 复制到 `memoryweb/dist`
+12. `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览
+    - [不推荐] 部署到服务器
+        - 项目为本地应用设计, 数据量极大([FAQ](https://github.com/lqzhgood/Shmily-Show/blob/main/docs/Q_A.md#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%9F%E6%88%90%E7%9A%84%E6%95%B0%E6%8D%AE-json-%E8%BF%99%E4%B9%88%E5%A4%A7))
+        - 包含完整的数据导出, 不限于 Shimly 上显示的. 可能会暴露你意想不到的隐私
+14. 完成
+
 
 ## Wiki
 
@@ -73,6 +91,11 @@
 - ...
 
 参考 [./docs/wiki.md](./docs/wiki.md)
+
+
+## feature
+
+- [ ] 数字孪生 根据聊天记录生成模型, 构建一个有 自己/对方 "人设/语境" 下的生成式对话 Ai.  [idea link](https://v2ex.com/t/931521)
 
 
 ## 感谢

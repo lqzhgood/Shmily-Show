@@ -1,7 +1,9 @@
+// 需要成组的号码
 const 分组1 = ['110', '13000000000'];
 
 const 分组2 = ['119', '19999999999'];
 
+// 不想参与统计的 sender 或 receiver
 const EXCLUDE = ['120'];
 
 const GROUP_SEND = [

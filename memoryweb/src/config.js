@@ -14,7 +14,7 @@ export const loadingTexts = ['我们家果果好萌的 ^з^', '我们家多乐�
 // 进入 query 页面时的默认时间 (默认显示哪个时间的消息)
 export const DEFAULT_URL_DAY = '1991-11-01_00-00-00';
 
-// 评论标签 可便于搜索
+// 搜索-评论 中可便于快速搜索的 Tag
 export const COMMENT_TAGS = ['#礼物', '#大事件', '//TODO'];
 
 // 滑动到最底部显示的文字
