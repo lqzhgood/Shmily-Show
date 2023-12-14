@@ -9,14 +9,7 @@ export const STEP_LENGTH = 20;
 export const STEP_MAX = 200;
 
 // Loading 显示文本 随机抽
-export const loadingTexts = [
-    '我们家果果好萌的 ^з^',
-    '我们家多乐不知道过得好不好 (,,•́ . •̀,,)',
-    '我们家千金好傲娇的 <(ˉ^ˉ)>',
-    '我们家菜菜不知道现在去哪了 T.T',
-    '我们家矿矿好粘的 =≡Σ(((つ´•ω•`)つ',
-    '猪好蠢的 づ￣ 3￣)づ',
-];
+export const loadingTexts = ['我们家果果好萌的 ^з^', '我们家多乐不知道过得好不好 (,,•́ . •̀,,)', '我们家千金好傲娇的 <(ˉ^ˉ)>', '我们家菜菜不知道现在去哪了 T.T', '我们家矿矿好粘的 =≡Σ(((つ´•ω•`)つ', '猪好蠢的 づ￣ 3￣)づ'];
 
 // 进入 query 页面时的默认时间 (默认显示哪个时间的消息)
 export const DEFAULT_URL_DAY = '1991-11-01_00-00-00';
@@ -36,7 +29,7 @@ export const HEAD_INFOS = {
     },
     HER_NAME: `I Am Groot`,
     LAST_TEXT: '',
-    LAST_TIME: '2019/09/13 23:42:34',
+    LAST_TIME: '',
 };
 
 // 消息的头像函数 返回值需为图片路径
