@@ -73,7 +73,7 @@
    -   确保解压后路径 `msgData\tools\Chrome\MyChrome.exe` 正确 // 可能被误杀
    -   删除 `Chrome.z*` 压缩包
      
-11. 将 `msgData` 复制到 `memoryweb/dist`
+11. 将 `msgData\*` 复制到 `memoryweb\dist\*`
 12. `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览
     - [不推荐] 部署到服务器
         - 项目为本地应用设计, 数据量极大([FAQ](https://github.com/lqzhgood/Shmily-Show/blob/main/docs/Q_A.md#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%9F%E6%88%90%E7%9A%84%E6%95%B0%E6%8D%AE-json-%E8%BF%99%E4%B9%88%E5%A4%A7))
