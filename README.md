@@ -56,9 +56,9 @@
 
 
 
-5. [可选] 修改 `memoryweb\src\config.js`
+5. [可选] 修改 查询页相关配置  `memoryweb\src\config.js`
    > 基本上都不需要改动, 如果要个性化的 (`HEAD_INFOS`等) 可以改一下
-6. [可选] 修改 `memoryweb\script\user\`
+6. [可选] 修改 统计页相关配置 `memoryweb\script\user\`  
 
         - banDict.js 词云中不需要的词可以在这里过滤
         - userDict.txt 词云用到的分词-用户词典 参考 https://github.com/fxsjy/jieba#使用示例
