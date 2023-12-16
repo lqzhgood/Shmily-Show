@@ -63,7 +63,7 @@
         - banDict.js 词云中不需要的词可以在这里过滤
         - userDict.txt 词云用到的分词-用户词典 参考 https://github.com/fxsjy/jieba#使用示例
         - commentTag.js 统计评论中 Tag 出现的次数
-        - userGroup.js 对 sender / receiver 分组
+        - userGroup.js 对 sender / receiver 分组   // [查询-搜索] 和 [统计] 都会用
 
 8. [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
 
