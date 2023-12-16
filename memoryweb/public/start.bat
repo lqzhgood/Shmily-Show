@@ -3,7 +3,7 @@
 # 切换到 UTF-8
 chcp 65001
 
-echo 此文件必须为 Windows CRLF 格式
+echo 此文件换行必须为 Windows CRLF 格式
 
 :: 移动到当前目录
 cd %cd%
