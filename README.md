@@ -10,15 +10,15 @@
 
 0. 🎞️ 安装 node 环境 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs.html]
 ```diff
-+ 🎞️ 1-14   -->   https://www.bilibili.com/video/BV12u4y1T7GV/
++ 🎞️ 1-12   -->   https://www.bilibili.com/video/BV12u4y1T7GV/
 ```
-2. 🏞️ 下载本项目并解压 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/github-down-repo.html]
-3. 🎞️ 安装依赖 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs-dependencies.html]
-4. 将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
+1. 🏞️ 下载本项目并解压 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/github-down-repo.html]
+2. 🎞️ 安装依赖 [http://lqzhgood.github.io/Shmily/guide/setup-runtime/nodejs-dependencies.html]
+3. 将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `数据文件` 放入 `/memoryweb/src/assets/data/msg/` 中
 
     > 文件名会作为 ID 的一部分，确认后不要反复修改
 
-5. 将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
+4. 将 [Get](http://lqzhgood.github.io/Shmily/guide/use/get.html) 中获取的 `资源文件` 放入 `/msgData/data/` 中
 ```
 如果想和以后的记录累计, 请自行保存 `数据文件` 和 `资源文件`
 和以后的数据一起重复 Show(本项目) 的过程即可一起累计统计与时间线显示
@@ -68,20 +68,20 @@
         - commentTag.js 统计评论中 Tag 出现的次数
         - userGroup.js 对 sender / receiver 分组   // [查询-搜索] 和 [统计] 都会用
 
-8. [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
+7. [可选] 如需对数据文件增删改查并添加评论, 参考文档 [./docs/modify.md](./docs/modify.md) 完成修改
 
-9. 进入 `memoryweb` 执行 `npm run build`
-10. 解压缩 `msgData\tools\Chrome.zip`
+8. 进入 `memoryweb` 执行 `npm run build`
+9. 解压缩 `msgData\tools\Chrome.zip`
     
    -   确保解压后路径 `msgData\tools\Chrome\MyChrome.exe` 正确 // 可能被误杀
    -   删除 `Chrome.z*` 压缩包
      
-11. 将 `msgData\*` 复制到 `memoryweb\dist\*`
-12. `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览
-    - [不推荐] 部署到服务器
+10. 将 `msgData\*` 复制到 `memoryweb\dist\*`
+11. `memoryweb/dist` 就是全静态的最终文件, 双击 `start.bat` 可以直接运行浏览
+    - [不推荐] 部署到服务器, 使用 `nginx` 等 web 服务器均可, 但必须支持 [Accept-Ranges](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Ranges)
         - 项目为本地应用设计, 数据量极大([FAQ](https://github.com/lqzhgood/Shmily-Show/blob/main/docs/Q_A.md#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%9F%E6%88%90%E7%9A%84%E6%95%B0%E6%8D%AE-json-%E8%BF%99%E4%B9%88%E5%A4%A7))
         - 包含完整的数据导出, 不限于 Shimly 上显示的. 可能会暴露你意想不到的隐私
-14. 完成
+12. 完成
 
 
 ## Wiki
