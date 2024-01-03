@@ -21,7 +21,13 @@ const DIR_OUTPUT_IMPORT_STATISTIC = path.join(DIR_INPUT_IMPORT, './statistic/');
 //  存放 msg data 的静态文件 也就是被 nginx 反代的目录
 //  最终会和 本项目 public 合并
 const DIR_OUTPUT_MSG_DATA_STATIC = path.join(process.cwd(), '../msgData/');
-const DIR_OUTPUT_COMMENT_STATIC = path.join(DIR_OUTPUT_MSG_DATA_STATIC, './data/comments/');
+const DIR_OUTPUT_COMMENT_STATIC = path.join(
+    DIR_OUTPUT_MSG_DATA_STATIC,
+    './data/comments/'
+);
+if (!fs.existsSync(DIR_OUTPUT_COMMENT_STATIC)) {
+    fs.mkdirpSync(DIR_OUTPUT_COMMENT_STATIC);
+}
 
 // web程序需要的一些静态文件  非 msg data
 const DIR_OUTPUT_PUBLIC = path.join(process.cwd(), './public/');
@@ -32,11 +38,20 @@ const DIR_OUTPUT_PUBLIC_JSON = path.join(DIR_OUTPUT_PUBLIC, './json/');
 
 // /public/json/msg
 const DIR_OUTPUT_PUBLIC_JSON_MSG = path.join(DIR_OUTPUT_PUBLIC_JSON, './msg/');
-const FILE_OUTPUT_JSON_MSG = path.join(DIR_OUTPUT_PUBLIC_JSON_MSG, './msg.json');
-const FILE_OUTPUT_JSON_MSG_ORIGINAL = path.join(DIR_OUTPUT_PUBLIC_JSON_MSG, './msg_original.json');
+const FILE_OUTPUT_JSON_MSG = path.join(
+    DIR_OUTPUT_PUBLIC_JSON_MSG,
+    './msg.json'
+);
+const FILE_OUTPUT_JSON_MSG_ORIGINAL = path.join(
+    DIR_OUTPUT_PUBLIC_JSON_MSG,
+    './msg_original.json'
+);
 
 // /public/json/statistic
-const DIR_OUTPUT_PUBLIC_JSON_STATISTIC = path.join(DIR_OUTPUT_PUBLIC_JSON, './statistic/');
+const DIR_OUTPUT_PUBLIC_JSON_STATISTIC = path.join(
+    DIR_OUTPUT_PUBLIC_JSON,
+    './statistic/'
+);
 
 // comment
 const DIR_INPUT_COMMENT = path.join(process.cwd(), './src/assets/data/');
